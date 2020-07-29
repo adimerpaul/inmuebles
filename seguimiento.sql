@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2020 a las 19:58:32
+-- Tiempo de generación: 29-07-2020 a las 15:31:19
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.3.13
 
@@ -86,12 +86,8 @@ CREATE TABLE `historiain` (
 --
 
 INSERT INTO `historiain` (`idhistoriain`, `idinmueble`, `personal`, `estado`, `lugar`, `fecha`, `detalle`, `iduser`) VALUES
-(1, 1, 'JOSE ARANIVAR', 'CREADO', 'INMUEBLES', '2020-07-15 16:01:25', 'TODO BIEN', 1),
-(2, 1, 'MARIA SEQUIIROS', 'ENTREGADO', 'VENTANILLA UNICA', '2020-07-15 16:35:03', 'TODO BIEN', 1),
-(3, 3, 'JOSE CANCETO', 'ENTREGADO', 'CAMBIO NOMBRE CODIFICAION', '2020-07-15 16:54:25', '', 1),
-(4, 3, 'MARIA SEQUIIROS', 'ENTREGADO', 'CERTIFICAION BANCARIA', '2020-07-15 16:56:25', 'TODO BIEN', 1),
-(5, 5, 'MARIA SEQUIIROS', 'ENTREGADO', 'CAMBIO NOMBRE CODIFICAION', '2020-07-15 17:52:30', 'BIEN', 1),
-(6, 6, 'MARIA SEQUIIROS', 'ENTREGADO', 'CAMBIO NOMBRE CODIFICAION', '2020-07-15 17:57:43', 'TODO', 1);
+(1, 2, 'JOSE CANCETO', 'ENTREGADO', 'TRANFERENCIAS', '2020-07-28 18:06:48', 'jose alberto', 1),
+(2, 3, 'DANIEL CALLE', 'ENTREGADO', 'TRANFERENCIAS', '2020-07-29 13:24:18', '', 1);
 
 -- --------------------------------------------------------
 
@@ -101,25 +97,27 @@ INSERT INTO `historiain` (`idhistoriain`, `idinmueble`, `personal`, `estado`, `l
 
 CREATE TABLE `inmuebles` (
   `idinmueble` int(11) NOT NULL,
+  `numero` varchar(150) NOT NULL,
   `nombre` varchar(150) NOT NULL,
-  `form27` varchar(150) NOT NULL,
-  `numtecnica` varchar(150) NOT NULL,
+  `ci` varchar(150) NOT NULL,
+  `num27` varchar(150) NOT NULL,
   `numtramite` varchar(150) NOT NULL,
+  `numtecnica` varchar(150) NOT NULL,
+  `direccion` varchar(150) NOT NULL,
+  `tramite` varchar(150) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
   `iduser` int(11) NOT NULL,
-  `ci` varchar(150) NOT NULL
+  `estado` varchar(20) NOT NULL DEFAULT 'CREADO'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `inmuebles`
 --
 
-INSERT INTO `inmuebles` (`idinmueble`, `nombre`, `form27`, `numtecnica`, `numtramite`, `fecha`, `iduser`, `ci`) VALUES
-(1, 'BLANCO RAMOS EXILDA', '3528535', '279727', '389-16', '2020-07-15 16:00:30', 2, '123213'),
-(3, 'JOSE ARANIVAR', '784545', '156456', '4156', '2020-07-15 16:41:58', 1, '1231'),
-(4, 'JOSE ARANIVAR', '784545', '12345', '123', '2020-07-15 16:56:02', 1, '12412412'),
-(5, 'maria', '1564695', '146', '1263', '2020-07-15 17:52:22', 1, '4156'),
-(6, 'JOSE ARANIVAR', '456', '1234165', '0123', '2020-07-15 17:57:34', 1, '2020');
+INSERT INTO `inmuebles` (`idinmueble`, `numero`, `nombre`, `ci`, `num27`, `numtramite`, `numtecnica`, `direccion`, `tramite`, `fecha`, `iduser`, `estado`) VALUES
+(2, '456', 'JOSE', '1010', '456789', '4564156', '1426312', 'calle bolivar', '', '2020-07-28 18:06:21', 1, 'TERMINADO'),
+(3, '457', 'JOSE CALLE VERA', '7894561', '132456', '153456', '465156', 'calle bolivar', 'TC', '2020-07-29 12:33:13', 1, 'CREADO'),
+(4, '458', 'MARIA', '789456', '456489', '4156468', '1465456', 'calle bolivar y 6 de agosto', 'TI', '2020-07-29 12:47:14', 1, 'TERMINADO');
 
 -- --------------------------------------------------------
 
@@ -137,22 +135,6 @@ CREATE TABLE `tramite` (
   `numero` varchar(150) NOT NULL,
   `estado` varchar(150) NOT NULL DEFAULT 'CREADO'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tramite`
---
-
-INSERT INTO `tramite` (`idtramite`, `ci`, `asunto`, `nombre`, `fecha`, `idusuario`, `numero`, `estado`) VALUES
-(1, '7336199', 'Cambio nombre vehiculos', 'adimer paul', '2020-07-07 13:47:20', 1, '20200', 'CREADO'),
-(3, '323125456', 'cambiuo de funete', 'jose canzeco', '2020-07-07 14:10:51', 1, '3030', 'CREADO'),
-(4, '123456789', 'CAMBIO NOMBRE NOMBRE', 'ADIMER PAUL', '2020-07-07 17:58:48', 1, '5050', 'CREADO'),
-(5, '7336199', 'CAMBIO DE PLACAS', 'JOSE VENTURA', '2020-07-08 00:31:31', 3, '3636', 'CREADO'),
-(6, '2736635', 'renovacion algo', 'jose perez', '2020-07-08 12:48:46', 4, '2345', 'CREADO'),
-(7, '12345', 'cambio nombre', 'juanito alcachofa', '2020-07-09 15:09:44', 5, '7070', 'CREADO'),
-(8, '1234567', 'CAMBIO DE NOMBRES', 'juancito', '2020-07-09 15:34:10', 4, '99999', 'CREADO'),
-(9, '', 'duplicado placa  5025esk', 'mariela bernabel', '2020-07-09 15:51:57', 6, '44949', 'CREADO'),
-(10, '4790416', 'solicitud colocado pasacalle', 'condori condori beltran', '2020-07-09 17:18:21', 7, '42968', 'CREADO'),
-(11, '5252', 'CAMBIO NOMBRE', 'JOSE ARANIVAR', '2020-07-15 16:50:13', 1, '4545', 'CREADO');
 
 -- --------------------------------------------------------
 
@@ -208,8 +190,7 @@ ALTER TABLE `historiain`
 -- Indices de la tabla `inmuebles`
 --
 ALTER TABLE `inmuebles`
-  ADD PRIMARY KEY (`idinmueble`),
-  ADD KEY `iduser` (`iduser`);
+  ADD PRIMARY KEY (`idinmueble`);
 
 --
 -- Indices de la tabla `tramite`
@@ -238,19 +219,19 @@ ALTER TABLE `historia`
 -- AUTO_INCREMENT de la tabla `historiain`
 --
 ALTER TABLE `historiain`
-  MODIFY `idhistoriain` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idhistoriain` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `inmuebles`
 --
 ALTER TABLE `inmuebles`
-  MODIFY `idinmueble` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idinmueble` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tramite`
 --
 ALTER TABLE `tramite`
-  MODIFY `idtramite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idtramite` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -275,12 +256,6 @@ ALTER TABLE `historia`
 ALTER TABLE `historiain`
   ADD CONSTRAINT `historiain_ibfk_1` FOREIGN KEY (`idinmueble`) REFERENCES `inmuebles` (`idinmueble`),
   ADD CONSTRAINT `historiain_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`);
-
---
--- Filtros para la tabla `inmuebles`
---
-ALTER TABLE `inmuebles`
-  ADD CONSTRAINT `inmuebles_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`);
 
 --
 -- Filtros para la tabla `tramite`
