@@ -332,41 +332,41 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
-<!--                <li >-->
-<!--                    <a href="--><?//=base_url()?><!--Admin">-->
-<!--                        <i class="fa fa-dashboard"></i> <span>Registrar folios</span>-->
-<!--                        <span class="pull-right-container">-->
-<!--                        </span>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li >-->
-<!--                    <a href="--><?//=base_url()?><!--Folios/unidad">-->
-<!--                        <i class="fa fa-files-o"></i> <span>Folios Por unidad</span>-->
-<!--                        <span class="pull-right-container">-->
-<!--                        </span>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li >-->
-<!--                    <a href="--><?//=base_url()?><!--Folios/cuenta">-->
-<!--                        <i class="fa fa-cog"></i> <span>Folios Por cuentas</span>-->
-<!--                        <span class="pull-right-container">-->
-<!--                        </span>-->
-<!--                    </a>-->
-<!--                </li>-->
                 <li >
-                    <a href="<?=base_url()?>Inmuebles">
-                        <i class="fa fa-history"></i> <span>Folios de inmuebles</span>
+                    <a href="<?=base_url()?>Admin">
+                        <i class="fa fa-dashboard"></i> <span>Registrar folios</span>
                         <span class="pull-right-container">
                         </span>
                     </a>
                 </li>
                 <li >
-                    <a href="<?=base_url()?>Inmuebles/dia/<?=date('Y-m-d')?>">
-                        <i class="fa fa-print"></i> <span>Inmuebles por dias</span>
+                    <a href="<?=base_url()?>Folios/unidad">
+                        <i class="fa fa-files-o"></i> <span>Folios Por unidad</span>
                         <span class="pull-right-container">
                         </span>
                     </a>
                 </li>
+                <li >
+                    <a href="<?=base_url()?>Folios/cuenta">
+                        <i class="fa fa-cog"></i> <span>Folios Por cuentas</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+<!--                <li >-->
+<!--                    <a href="--><?//=base_url()?><!--Inmuebles">-->
+<!--                        <i class="fa fa-history"></i> <span>Folios de inmuebles</span>-->
+<!--                        <span class="pull-right-container">-->
+<!--                        </span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li >-->
+<!--                    <a href="--><?//=base_url()?><!--Inmuebles/dia/--><?//=date('Y-m-d')?><!--">-->
+<!--                        <i class="fa fa-print"></i> <span>Inmuebles por dias</span>-->
+<!--                        <span class="pull-right-container">-->
+<!--                        </span>-->
+<!--                    </a>-->
+<!--                </li>-->
 <!--                <li class="treeview">-->
 <!--                    <a href="#">-->
 <!--                        <i class="fa fa-files-o"></i>-->

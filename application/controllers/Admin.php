@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
             header('Location: '.base_url());
         }
         $this->load->view('templates/header');
-        $this->load->view('inmuebles');
+        $this->load->view('admin');
         $this->load->view('templates/footer');
     }
     public function insert()
