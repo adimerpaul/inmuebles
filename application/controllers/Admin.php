@@ -25,6 +25,20 @@ nombre='$nombre',
 idusuario='$idusuario',
 numero='$numero'
 ");
+        $idtramite=$this->db->insert_id();
+        $estado="INICIO";
+        $lugar=$_SESSION['unidad'];
+        $iduser=$_SESSION['iduser'];
+        $detalle=$_POST['asunto'];
+        $personal=$_SESSION['nombre'];
+        $this->db->query("INSERT INTO historia SET 
+idtramite='$idtramite',
+estado='$estado',
+lugar='$lugar',
+iduser='$iduser',
+detalle='$detalle',
+personal='$personal'
+");
         header('Location: '.base_url().'Admin');
     }
     public function datos($id){
@@ -32,7 +46,8 @@ numero='$numero'
         echo json_encode($query->result_array());
     }
     public function historia($id){
-        $query=$this->db->query("SELECT h.fecha,t.nombre,h.lugar,h.estado,h.detalle,h.personal
+        $query=$this->db->query("SELECT h.fecha,t.nombre,h.lugar,h.estado,h.detalle,h.personal,
+(select u.nombre FROM users u WHERE u.iduser=h.iduser) as de
 FROM tramite t 
 INNER JOIN historia h ON t.idtramite=h.idtramite 
 WHERE h.idtramite=$id");

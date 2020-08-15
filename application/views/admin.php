@@ -93,7 +93,7 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Fecha</th>
-                                                            <th>Nombre</th>
+                                                            <th>De</th>
                                                             <th>Lugar</th>
                                                             <th>Personal</th>
                                                             <th>Estado</th>
@@ -116,27 +116,20 @@
                                                                     <option value="INMUEBLES">INMUEBLES</option>
                                                                     <option value="INDUSTRI COMERCIO">INDUSTRI COMERCIO</option>
                                                                     <option value="ESPEC. PUBLICOS">ESPEC. PUBLICOS</option>
+                                                                    <option value="MERCADOS">MERCADOS</option>
                                                                 </select>
                                                             </div>
                                                             <label for="personal" class="col-sm-1 control-label">Personal</label>
                                                             <div class="col-sm-2">
-                                                                <select name="personal" id="personal" class="form-control" required>
-                                                                    <option value="">Selecionar....</option>
-                                                                    <?php
-                                                                    $query=$this->db->query("SELECT * FROM users WHERE tipo='RECEPCIONISTA'");
-                                                                    foreach ($query->result() as $row){
-                                                                        echo "<option value='$row->nombrecompleto'>$row->nombrecompleto</option>";
-                                                                    }
-                                                                    ?>
-                                                                </select>
+                                                                <input type="text" name="personal" id="personal" class="form-control" re>
                                                             </div>
                                                             <label for="estado" class="col-sm-1 control-label">Estado</label>
                                                             <div class="col-sm-2">
                                                                 <select name="estado" id="estado" class="form-control" required>
                                                                     <option value="">Selecionar....</option>
                                                                     <option value="ENTREGADO">ENTREGADO</option>
-                                                                    <option value="DESPACHADO">DESPACHADO</option>
-                                                                    <option value="DETENIDO">DETENIDO</option>
+                                                                    <option value="DESPACHADO">DETENIDO</option>
+                                                                    <option value="DETENIDO">FINALIZADO</option>
 
                                                                 </select>
                                                             </div>
@@ -179,7 +172,7 @@
                                     dat.forEach(res=>{
                                         $('#contenido').append("<tr>" +
                                             "<td>"+res.fecha+"</td>" +
-                                            "<td>"+res.nombre+"</td>" +
+                                            "<td>"+res.de+"</td>" +
                                             "<td>"+res.lugar+"</td>" +
                                             "<td>"+res.personal+"</td>" +
                                             "<td><span class='label label-success'>"+res.estado+"</span></td>" +

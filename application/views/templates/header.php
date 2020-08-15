@@ -353,20 +353,20 @@
                         </span>
                     </a>
                 </li>
-<!--                <li >-->
-<!--                    <a href="--><?//=base_url()?><!--Inmuebles">-->
-<!--                        <i class="fa fa-history"></i> <span>Folios de inmuebles</span>-->
-<!--                        <span class="pull-right-container">-->
-<!--                        </span>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li >-->
-<!--                    <a href="--><?//=base_url()?><!--Inmuebles/dia/--><?//=date('Y-m-d')?><!--">-->
-<!--                        <i class="fa fa-print"></i> <span>Inmuebles por dias</span>-->
-<!--                        <span class="pull-right-container">-->
-<!--                        </span>-->
-<!--                    </a>-->
-<!--                </li>-->
+                <li >
+                    <a href="<?=base_url()?>Inmuebles">
+                        <i class="fa fa-history"></i> <span>Folios de inmuebles</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+                <li >
+                    <a href="<?=base_url()?>Inmuebles/dia/<?=date('Y-m-d')?>">
+                        <i class="fa fa-print"></i> <span>Inmuebles por dias</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
 <!--                <li class="treeview">-->
 <!--                    <a href="#">-->
 <!--                        <i class="fa fa-files-o"></i>-->
